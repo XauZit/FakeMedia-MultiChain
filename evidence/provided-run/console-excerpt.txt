@@ -1,0 +1,766 @@
+EXTRACT FROM USER-PROVIDED CONSOLE OUTPUT. This is text, not a screenshot.
+
+status
+{
+  "captured_at": "2026-10-08T19:41:12.366+00:00",
+  "version": "2.0.2-mining-check",
+  "chain": "fakenews",
+  "workspace": "<EXISTING_WORKSPACE>",
+  "setup_complete": true,
+  "nodes": {
+    "authority": {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "rpc_port": 8441,
+      "blocks": 552,
+      "connections": 4,
+      "peer_count": 4,
+      "bestblockhash": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "version": "2.3.3",
+      "protocolversion": 20013,
+      "setupblocks": 10,
+      "miningpaused": false
+    },
+    "publisher": {
+      "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+      "rpc_port": 8442,
+      "blocks": 552,
+      "connections": 4,
+      "peer_count": 4,
+      "bestblockhash": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "version": "2.3.3",
+      "protocolversion": 20013,
+      "setupblocks": 10,
+      "miningpaused": false
+    },
+    "validator1": {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "rpc_port": 8443,
+      "blocks": 553,
+      "connections": 4,
+      "peer_count": 4,
+      "bestblockhash": "00c2139a0a19373f4e85624e00f3b566feb70cbf8ff6c98b809e43dae61728f1",
+      "version": "2.3.3",
+      "protocolversion": 20013,
+      "setupblocks": 10,
+      "miningpaused": false
+    },
+    "validator2": {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "rpc_port": 8444,
+      "blocks": 552,
+      "connections": 4,
+      "peer_count": 4,
+      "bestblockhash": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "version": "2.3.3",
+      "protocolversion": 20013,
+      "setupblocks": 10,
+      "miningpaused": false
+    },
+    "auditor": {
+      "address": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+      "rpc_port": 8445,
+      "blocks": 552,
+      "connections": 4,
+      "peer_count": 4,
+      "bestblockhash": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "version": "2.3.3",
+      "protocolversion": 20013,
+      "setupblocks": 10,
+      "miningpaused": false
+    }
+  },
+  "miners": [
+    {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "islocal": false,
+      "permitted": true,
+      "diversitywaitblocks": 0,
+      "startblock": 0,
+      "endblock": 4294967295,
+      "lastmined": 551,
+      "chainstate": "mining-permitted",
+      "localstate": null
+    },
+    {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "islocal": false,
+      "permitted": true,
+      "diversitywaitblocks": 0,
+      "startblock": 0,
+      "endblock": 4294967295,
+      "lastmined": null,
+      "chainstate": "mining-permitted",
+      "localstate": null
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "islocal": true,
+      "permitted": true,
+      "diversitywaitblocks": 1,
+      "startblock": 0,
+      "endblock": 4294967295,
+      "lastmined": 552,
+      "chainstate": "waiting-mining-diversity",
+      "localstate": "waiting-mining-diversity"
+    }
+  ],
+  "permissions": [
+    {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "for": null,
+      "type": "mine",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "for": null,
+      "type": "connect",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "for": null,
+      "type": "send",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+      "for": null,
+      "type": "receive",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+      "for": null,
+      "type": "connect",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+      "for": null,
+      "type": "receive",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+      "for": null,
+      "type": "connect",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+      "for": null,
+      "type": "send",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+      "for": null,
+      "type": "receive",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "mine",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "admin",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "activate",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "connect",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "send",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "receive",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "issue",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+      "for": null,
+      "type": "create",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "for": null,
+      "type": "mine",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "for": null,
+      "type": "connect",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "for": null,
+      "type": "send",
+      "startblock": 0,
+      "endblock": 4294967295
+    },
+    {
+      "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+      "for": null,
+      "type": "receive",
+      "startblock": 0,
+      "endblock": 4294967295
+    }
+  ],
+  "streams": [
+    {
+      "name": "root",
+      "createtxid": "ae058917c9e8040bb9d5898861222949e76c4fdc8850e2d7cefcc997ec6ce6d0",
+      "streamref": "0-0-0",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 0,
+      "confirmed": 0,
+      "keys": 0,
+      "publishers": 0
+    },
+    {
+      "name": "registry",
+      "createtxid": "184aafa3166dc3071792ff7f192dda0ce4250c1dadab111aee91d9268f1435d2",
+      "streamref": "66-266-18968",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 5,
+      "confirmed": 5,
+      "keys": 5,
+      "publishers": 1
+    },
+    {
+      "name": "news",
+      "createtxid": "93732ec01264217425416d4362fb175a145afe595158068c416a154257716791",
+      "streamref": "67-266-29587",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 3,
+      "confirmed": 3,
+      "keys": 4,
+      "publishers": 1
+    },
+    {
+      "name": "predictions",
+      "createtxid": "f6bb6238c0d87acb7cf6c1a6531aebffa27135e6034120b8bec35e40f2127928",
+      "streamref": "68-266-48118",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 3,
+      "confirmed": 3,
+      "keys": 3,
+      "publishers": 1
+    },
+    {
+      "name": "votes",
+      "createtxid": "984b220336ffbd869cacd44e669740b66a85878ceaeaeb8a709884eeec30a13a",
+      "streamref": "69-266-19352",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 6,
+      "confirmed": 6,
+      "keys": 3,
+      "publishers": 2
+    },
+    {
+      "name": "decisions",
+      "createtxid": "66693d66806ac38e1d53cc4e8b94274c17eca7fb26e740098c70707d931b1f67",
+      "streamref": "70-265-26982",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 3,
+      "confirmed": 3,
+      "keys": 3,
+      "publishers": 1
+    },
+    {
+      "name": "audit",
+      "createtxid": "de44a4d3bcd7c6366827316828d1117937aaa9da1e9f1f3f49d1f79d90fe3f0b",
+      "streamref": "71-266-17630",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 0,
+      "confirmed": 0,
+      "keys": 0,
+      "publishers": 0
+    },
+    {
+      "name": "benchmarks",
+      "createtxid": "53dfd9318066ef92f694c6aea5d93258ad9c5a51a30ae48967dc521d716f7a14",
+      "streamref": "72-265-57171",
+      "restrict": {
+        "write": true,
+        "read": false,
+        "onchain": false,
+        "offchain": false
+      },
+      "details": {},
+      "subscribed": true,
+      "retrieve": true,
+      "canretrieve": true,
+      "indexes": {
+        "items": true,
+        "keys": true,
+        "publishers": true,
+        "items-local": true,
+        "keys-local": true,
+        "publishers-local": true
+      },
+      "synchronized": true,
+      "items": 0,
+      "confirmed": 0,
+      "keys": 0,
+      "publishers": 0
+    }
+  ],
+  "shared_height_check": {
+    "height": 552,
+    "hashes": {
+      "authority": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "publisher": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "validator1": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "validator2": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c",
+      "auditor": "00198bba2564281cd010499a5cfb586a47b335f1c08287143682164f6072162c"
+    },
+    "same_hash": true
+  },
+  "past_setup_phase": true,
+  "missing_streams": []
+}
+
+doctor
+{
+  "software_version": "2.0.2-mining-check",
+  "captured_at": "2026-10-08T19:41:12.916+00:00",
+  "workspace": "<EXISTING_WORKSPACE>",
+  "chain": "fakenews",
+  "setup_complete": true,
+  "all_passed": true,
+  "nodes": {
+    "authority": {
+      "rpc_port": 8441,
+      "p2p_port": 7441,
+      "online": true,
+      "blocks": 552,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 1,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": 552,
+        "chainstate": "waiting-mining-diversity",
+        "localstate": "waiting-mining-diversity",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "publisher": {
+      "rpc_port": 8442,
+      "p2p_port": 7442,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+        "permitted": false,
+        "present": false,
+        "source": "listminers.permitted",
+        "expected_permitted": false
+      },
+      "permission_mismatches": []
+    },
+    "validator1": {
+      "rpc_port": 8443,
+      "p2p_port": 7443,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 1,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": 553,
+        "chainstate": "waiting-mining-diversity",
+        "localstate": "waiting-mining-diversity",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "validator2": {
+      "rpc_port": 8444,
+      "p2p_port": 7444,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 0,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": null,
+        "chainstate": "mining-permitted",
+        "localstate": "waiting-mining-turnover",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "auditor": {
+      "rpc_port": 8445,
+      "p2p_port": 7445,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+        "permitted": false,
+        "present": false,
+        "source": "listminers.permitted",
+        "expected_permitted": false
+      },
+      "permission_mismatches": []
+    }
+  },
+  "shared_height_check": {
+    "height": 552,
+    "same_hash": true,
+    "height_lag": 1
+  },
+  "issues": [],
+  "note": "Readiness checks are not a performance result or a real-world truth guarantee."
+}
+
+authority_getinfo
+{
+  "version": "2.3.3",
+  "nodeversion": 20303901,
+  "edition": "Community",
+  "protocolversion": 20013,
+  "chainname": "fakenews",
+  "description": "MultiChain fakenews",
+  "protocol": "multichain",
+  "port": 7441,
+  "setupblocks": 10,
+  "nodeaddress": "fakenews@127.0.0.1:7441",
+  "burnaddress": "1XXXXXXXDXXXXXXXDeXXXXXXTGXXXXXXaaU85P",
+  "incomingpaused": false,
+  "miningpaused": false,
+  "offchainpaused": false,
+  "walletversion": 60000,
+  "balance": 0,
+  "walletdbversion": 3,
+  "reindex": false,
+  "blocks": 554,
+  "chainrewards": 0,
+  "assets": 1,
+  "streams": 8,
+  "timeoffset": 0,
+  "connections": 4,
+  "proxy": "",
+  "difficulty": 5.96046447753906e-08,
+  "testnet": false,
+  "keypoololdest": 1791487158,
+  "keypoolsize": 2,
+  "paytxfee": 0,
+  "relayfee": 0,
+  "errors": ""
+}
+
+authority_getpeerinfo
+[
+  {
+    "id": 5,
+    "addr": "127.0.0.1:60639",
+    "addrlocal": "127.0.0.1:7441",
+    "services": "0000000000000001",
+    "lastsend": 1791488477,
+    "lastrecv": 1791488477,
+    "bytessent": 185244,
+    "bytesrecv": 244060,
+    "conntime": 1791487179,
+    "pingtime": 0.048837,
+    "version": 70002,
+    "subver": "/MultiChain:0.2.0.13/",
+    "handshakelocal": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+    "handshake": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+    "inbound": true,
+    "encrypted": false,
+    "startingheight": 0,
+    "banscore": 0,
+    "synced_headers": 555,
+    "synced_blocks": 555,
+    "inflight": [],
+    "whitelisted": false
+  },
+  {
+    "id": 15,
+    "addr": "127.0.0.1:7443",
+    "addrlocal": "127.0.0.1:36400",
+    "services": "0000000000000001",
+    "lastsend": 1791488476,
+    "lastrecv": 1791488477,
+    "bytessent": 345867,
+    "bytesrecv": 328906,
+    "conntime": 1791487277,
+    "pingtime": 0.11988,
+    "version": 70002,
+    "subver": "/MultiChain:0.2.0.13/",
+    "handshakelocal": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+    "handshake": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+    "inbound": false,
+    "encrypted": false,
+    "startingheight": 0,
+    "banscore": 0,
+    "synced_headers": 555,
+    "synced_blocks": 555,
+    "inflight": [],
+    "whitelisted": false
+  },
+  {
+    "id": 19,
+    "addr": "127.0.0.1:36450",
+    "addrlocal": "127.0.0.1:7441",
+    "services": "0000000000000001",
+    "lastsend": 1791488477,
+    "lastrecv": 1791488477,
+    "bytessent": 154084,
+    "bytesrecv": 208398,
+    "conntime": 1791487288,
+    "pingtime": 0.046234,
+    "version": 70002,
+    "subver": "/MultiChain:0.2.0.13/",
+    "handshakelocal": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+    "handshake": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+    "inbound": true,
+    "encrypted": false,
+    "startingheight": 60,
+    "banscore": 0,
+    "synced_headers": 555,
+    "synced_blocks": 555,
+    "inflight": [],
+    "whitelisted": false
+  },
+  {
+    "id": 23,
+    "addr": "127.0.0.1:36519",
+    "addrlocal": "127.0.0.1:7441",
+    "services": "0000000000000001",
+    "lastsend": 1791488477,
+    "lastrecv": 1791488477,
+    "bytessent": 149909,
+    "bytesrecv": 207335,
+    "conntime": 1791487316,
+    "pingtime": 0.076794,
+    "version": 70002,
+    "subver": "/MultiChain:0.2.0.13/",
+    "handshakelocal": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+    "handshake": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+    "inbound": true,
+    "encrypted": false,
+    "startingheight": 68,
+    "banscore": 0,
+    "synced_headers": 555,
+    "synced_blocks": 555,
+    "inflight": [],
+    "whitelisted": false
+  }
+]

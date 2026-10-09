@@ -1,0 +1,11 @@
+{
+  "package": "FakeMedia GitHub submission preparation bundle",
+  "implementation_version": "2.0.2-mining-check",
+  "lab_py_sha256": "c971785b2bb81f70d457fe2b4086efff469984b8b9b0d2093bf13260a33b6926",
+  "source_lab_py_sha256": "c971785b2bb81f70d457fe2b4086efff469984b8b9b0d2093bf13260a33b6926",
+  "lab_py_unchanged": true,
+  "paper_sha256": "99279a6b216406493345c66473a27ee2b67fa26e9b9165875edee2eb08cbe3dd",
+  "paper_original_bytes_preserved": true,
+  "packaged_on": "2026-10-09",
+  "scope": "Working implementation plus authoring aids. Final student report, screenshots, live workflow/security/benchmark evidence, and GitHub URL remain student deliverables."
+}

@@ -1,0 +1,24 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="BOOTSTRAP AND RESTART WORKFLOW";labelloc=t;
+start[shape=ellipse,label="Start from source folder"];
+check[shape=diamond,label="Existing\nlab.json?"];
+reuse[label="Saved workspace: start -> doctor"];
+fresh[label="Check binaries and ports\nCreate five node directories"];
+params[label="Create chain; set parameters\nBEFORE genesis"];
+network[label="Start authority; join peers\nGrant connection/transaction rights"];
+miners[label="Grant reviewer mining rights\nWait for confirmation"];
+streams[label="Create seven write-restricted streams\nSubscribe all five nodes"];
+enroll[label="Enroll -> registry\nGrant stream writers"];
+asset[label="Issue asset; train model\nCapture parameters"];
+ready[shape=diamond,label="doctor\npasses?"];
+pass[shape=ellipse,label="Mark setup_complete\nProceed to functional tests"];
+fail[label="Preserve and diagnose\nRepair incomplete setup"];
+start->check;check->reuse[label="Yes"];check->fresh[label="No"];
+fresh->params->network->miners->streams->enroll->asset->ready;
+reuse->ready;ready->pass[label="Yes"];ready->fail[label="No"];
+
+}

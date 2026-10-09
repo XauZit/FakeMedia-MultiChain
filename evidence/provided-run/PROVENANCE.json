@@ -1,0 +1,18 @@
+{
+  "source": "User-supplied Pasted text(3).txt",
+  "source_sha256": "120c8e3099c1b3699c732b3160c387f35b5ecb7455167f95e95c1a762a744bde",
+  "captured_at_as_reported": "2026-10-08T19:41:12.916+00:00",
+  "independent_live_execution_by_packager": false,
+  "transformations": [
+    "Four JSON outputs extracted from supplied transcript.",
+    "workspace absolute path replaced with <EXISTING_WORKSPACE> in status and doctor.",
+    "No result counts, flags, ports, addresses or hashes changed."
+  ],
+  "screenshots_included": false,
+  "evidence_status": {
+    "network_and_cli": "Supported by provided log",
+    "demo_all_passed": "Not established by this transcript",
+    "security_tests_all_passed": "Not established by this transcript",
+    "successful_1000_request_benchmark": "Not established by this transcript"
+  }
+}

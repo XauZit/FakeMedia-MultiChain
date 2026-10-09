@@ -1,0 +1,128 @@
+test_cosine_identity (test_lab.ModelTests.test_cosine_identity) ... ok
+test_dataset_counts (test_lab.ModelTests.test_dataset_counts) ... ok
+test_no_exact_train_test_overlap (test_lab.ModelTests.test_no_exact_train_test_overlap) ... ok
+test_reproducible_q_learning (test_lab.ModelTests.test_reproducible_q_learning) ... ok
+test_similarities_are_bounded (test_lab.ModelTests.test_similarities_are_bounded) ... ok
+test_training_artifacts (test_lab.ModelTests.test_training_artifacts) ... ok
+test_unknown_words_abstain (test_lab.ModelTests.test_unknown_words_abstain) ... ok
+test_abstention (test_lab.PolicyTests.test_abstention) ... ok
+test_disagreement (test_lab.PolicyTests.test_disagreement) ... ok
+test_duplicate_vote (test_lab.PolicyTests.test_duplicate_vote) ... ok
+test_impersonation (test_lab.PolicyTests.test_impersonation) ... ok
+test_invalid_label (test_lab.PolicyTests.test_invalid_label) ... ok
+test_multiple_publishers_fail_closed (test_lab.PolicyTests.test_multiple_publishers_fail_closed) ... ok
+test_one_missing (test_lab.PolicyTests.test_one_missing) ... ok
+test_permutation_invariant (test_lab.PolicyTests.test_permutation_invariant) ... ok
+test_two_agree_fake (test_lab.PolicyTests.test_two_agree_fake) ... ok
+test_two_agree_real (test_lab.PolicyTests.test_two_agree_real) ... ok
+test_unconfirmed (test_lab.PolicyTests.test_unconfirmed) ... ok
+test_wrong_hash (test_lab.PolicyTests.test_wrong_hash) ... ok
+test_wrong_news_id (test_lab.PolicyTests.test_wrong_news_id) ... ok
+test_wrong_publisher (test_lab.PolicyTests.test_wrong_publisher) ... ok
+test_canonical_key_order (test_lab.PureTests.test_canonical_key_order) ... ok
+test_json_roundtrip (test_lab.PureTests.test_json_roundtrip) ... ok
+test_negation_retained (test_lab.PureTests.test_negation_retained) ... ok
+test_percentile_empty (test_lab.PureTests.test_percentile_empty) ... ok
+test_percentile_interpolation (test_lab.PureTests.test_percentile_interpolation) ... ok
+test_percentile_single (test_lab.PureTests.test_percentile_single) ... ok
+test_sha256_known_vector (test_lab.PureTests.test_sha256_known_vector) ... ok
+test_stats_samples (test_lab.PureTests.test_stats_samples) ... ok
+test_tamper_changes_hash (test_lab.PureTests.test_tamper_changes_hash) ... ok
+test_tokenization (test_lab.PureTests.test_tokenization) ... ok
+test_writer_lock_excludes_second_writer (test_lab.PureTests.test_writer_lock_excludes_second_writer) ... ok
+test_no_retry_on_error (test_lab.RPCTests.test_no_retry_on_error) ... ok
+test_parameter_types_preserved (test_lab.RPCTests.test_parameter_types_preserved) ... ok
+test_remote_rpc_refused (test_lab.RPCTests.test_remote_rpc_refused) ... ok
+test_rpc_error_not_transport_unknown (test_lab.RPCTests.test_rpc_error_not_transport_unknown) ... ok
+test_transport_failure_is_unknown (test_lab.RPCTests.test_transport_failure_is_unknown) ... ok
+test_bootstrap_creates_only_missing_entities_and_resumes (test_recovery.BootstrapTests.test_bootstrap_creates_only_missing_entities_and_resumes) ... Setup: network
+Setup: mining permissions
+Setup: streams
+Setup: signed registration
+Setup: application permissions
+Setup: asset
+Setup: teaching model and evidence
+Setup: readiness validation
+Setup: network
+Setup: mining permissions
+Setup: streams
+Setup: signed registration
+Setup: application permissions
+Setup: asset
+Setup: teaching model and evidence
+Setup: readiness validation
+ok
+test_bootstrap_reuses_existing_asset_and_streams (test_recovery.BootstrapTests.test_bootstrap_reuses_existing_asset_and_streams) ... Setup: network
+Setup: mining permissions
+Setup: streams
+Setup: signed registration
+Setup: application permissions
+Setup: asset
+Setup: teaching model and evidence
+Setup: readiness validation
+ok
+test_closed_stream_2x_and_legacy_fields (test_recovery.BootstrapTests.test_closed_stream_2x_and_legacy_fields) ... ok
+test_demo_failure_is_reflected_in_exit_check_field (test_recovery.BootstrapTests.test_demo_failure_is_reflected_in_exit_check_field) ... ok
+test_ensure_grant_does_not_regrant_existing_permission (test_recovery.BootstrapTests.test_ensure_grant_does_not_regrant_existing_permission) ... ok
+test_missing_workspace_has_clear_error (test_recovery.BootstrapTests.test_missing_workspace_has_clear_error) ... ok
+test_mutating_getnewaddress_is_not_read_only (test_recovery.BootstrapTests.test_mutating_getnewaddress_is_not_read_only) ... ok
+test_read_transport_does_not_claim_unknown_write (test_recovery.BootstrapTests.test_read_transport_does_not_claim_unknown_write) ... ok
+test_rpc_error_includes_numeric_code (test_recovery.BootstrapTests.test_rpc_error_includes_numeric_code) ... ok
+test_setup_will_not_overwrite_config (test_recovery.BootstrapTests.test_setup_will_not_overwrite_config) ... ok
+test_completed_repair_does_not_restore_permissions (test_recovery.ReadinessTests.test_completed_repair_does_not_restore_permissions) ... ok
+test_doctor_reports_incomplete_even_when_nodes_run (test_recovery.ReadinessTests.test_doctor_reports_incomplete_even_when_nodes_run) ... ok
+test_foreign_listener_is_not_stopped (test_recovery.ReadinessTests.test_foreign_listener_is_not_stopped) ... ok
+test_healthy_fixture (test_recovery.ReadinessTests.test_healthy_fixture) ... ok
+test_incomplete_setup_sends_no_workload (test_recovery.ReadinessTests.test_incomplete_setup_sends_no_workload) ... ok
+test_ledger_preflight_does_not_require_model (test_recovery.ReadinessTests.test_ledger_preflight_does_not_require_model) ... ok
+test_missing_model_fails_model_preflight (test_recovery.ReadinessTests.test_missing_model_fails_model_preflight) ... ok
+test_missing_stream_is_not_ready (test_recovery.ReadinessTests.test_missing_stream_is_not_ready) ... ok
+test_offline_role_is_not_ready (test_recovery.ReadinessTests.test_offline_role_is_not_ready) ... ok
+test_open_stream_is_not_ready (test_recovery.ReadinessTests.test_open_stream_is_not_ready) ... ok
+test_revoked_writer_fails_full_preflight (test_recovery.ReadinessTests.test_revoked_writer_fails_full_preflight) ... ok
+test_shutdown_waits_for_listener_to_close (test_recovery.ReadinessTests.test_shutdown_waits_for_listener_to_close) ... ok
+test_start_does_not_launch_a_duplicate (test_recovery.ReadinessTests.test_start_does_not_launch_a_duplicate) ... ok
+test_stopped_node_is_not_force_killed (test_recovery.ReadinessTests.test_stopped_node_is_not_force_killed) ... ok
+test_structure_check_allows_explicit_permission_restore (test_recovery.ReadinessTests.test_structure_check_allows_explicit_permission_restore) ... ok
+test_unsubscribed_stream_is_not_ready (test_recovery.ReadinessTests.test_unsubscribed_stream_is_not_ready) ... ok
+test_empty_wait_does_not_call_rpc (test_recovery.WaitRegressionTests.test_empty_wait_does_not_call_rpc) ... ok
+test_invalid_confirmation_target (test_recovery.WaitRegressionTests.test_invalid_confirmation_target) ... ok
+test_invalid_parameter_is_not_swallowed (test_recovery.WaitRegressionTests.test_invalid_parameter_is_not_swallowed) ... ok
+test_legacy_5_then_confirmed (test_recovery.WaitRegressionTests.test_legacy_5_then_confirmed) ... ok
+test_multichain_710_then_confirmed (test_recovery.WaitRegressionTests.test_multichain_710_then_confirmed) ... ok
+test_only_reads_are_retried_by_lab_rpc (test_recovery.WaitRegressionTests.test_only_reads_are_retried_by_lab_rpc) ... ok
+test_permission_failure_is_not_swallowed (test_recovery.WaitRegressionTests.test_permission_failure_is_not_swallowed) ... ok
+test_timeout_includes_pending_txid_and_role (test_recovery.WaitRegressionTests.test_timeout_includes_pending_txid_and_role) ... ok
+test_transport_read_can_be_polled (test_recovery.WaitRegressionTests.test_transport_read_can_be_polled) ... ok
+test_warmup_then_confirmed (test_recovery.WaitRegressionTests.test_warmup_then_confirmed) ... ok
+test_write_never_retried_by_lab_rpc (test_recovery.WaitRegressionTests.test_write_never_retried_by_lab_rpc) ... ok
+test_authorized_miner_waiting_turn_passes_doctor (test_mining_permissions.MiningCheckRegressionTests.test_authorized_miner_waiting_turn_passes_doctor) ... ok
+test_disabling_permission_diagnostics_makes_no_mining_read (test_mining_permissions.MiningCheckRegressionTests.test_disabling_permission_diagnostics_makes_no_mining_read) ... ok
+test_doctor_never_uses_verifypermission_for_mine (test_mining_permissions.MiningCheckRegressionTests.test_doctor_never_uses_verifypermission_for_mine) ... ok
+test_doctor_preserves_wait_diagnostics (test_mining_permissions.MiningCheckRegressionTests.test_doctor_preserves_wait_diagnostics) ... ok
+test_each_authorized_miner_may_be_waiting_in_its_snapshot (test_mining_permissions.MiningCheckRegressionTests.test_each_authorized_miner_may_be_waiting_in_its_snapshot) ... ok
+test_explicit_false_is_denied_even_when_wait_is_zero (test_mining_permissions.MiningCheckRegressionTests.test_explicit_false_is_denied_even_when_wait_is_zero) ... ok
+test_invalid_response_is_not_treated_as_permission (test_mining_permissions.MiningCheckRegressionTests.test_invalid_response_is_not_treated_as_permission) ... ok
+test_missing_miner_is_false_not_allowed (test_mining_permissions.MiningCheckRegressionTests.test_missing_miner_is_false_not_allowed) ... ok
+test_missing_mining_permission_is_granted_once_and_waited (test_mining_permissions.MiningCheckRegressionTests.test_missing_mining_permission_is_granted_once_and_waited) ... ok
+test_other_permissions_still_use_verifypermission (test_mining_permissions.MiningCheckRegressionTests.test_other_permissions_still_use_verifypermission) ... ok
+test_revoked_miner_still_fails (test_mining_permissions.MiningCheckRegressionTests.test_revoked_miner_still_fails) ... ok
+test_rpc_errors_are_not_swallowed (test_mining_permissions.MiningCheckRegressionTests.test_rpc_errors_are_not_swallowed) ... ok
+test_unexpected_publisher_mining_still_fails (test_mining_permissions.MiningCheckRegressionTests.test_unexpected_publisher_mining_still_fails) ... ok
+test_waiting_miner_is_not_regranted_during_repair (test_mining_permissions.MiningCheckRegressionTests.test_waiting_miner_is_not_regranted_during_repair) ... ok
+test_allowlist_accepts_benchmark (test_submission_tools.SubmissionTests.test_allowlist_accepts_benchmark) ... ok
+test_allowlist_rejects_config (test_submission_tools.SubmissionTests.test_allowlist_rejects_config) ... ok
+test_allowlist_rejects_nested_private (test_submission_tools.SubmissionTests.test_allowlist_rejects_nested_private) ... ok
+test_allowlist_rejects_wallet (test_submission_tools.SubmissionTests.test_allowlist_rejects_wallet) ... ok
+test_allowlisted_export_and_hashes (test_submission_tools.SubmissionTests.test_allowlisted_export_and_hashes) ... ok
+test_benign_code_guard (test_submission_tools.SubmissionTests.test_benign_code_guard) ... ok
+test_credential_key_refused (test_submission_tools.SubmissionTests.test_credential_key_refused) ... ok
+test_existing_destination_refused (test_submission_tools.SubmissionTests.test_existing_destination_refused) ... ok
+test_private_file_guard (test_submission_tools.SubmissionTests.test_private_file_guard) ... ok
+test_runtime_directory_guard (test_submission_tools.SubmissionTests.test_runtime_directory_guard) ... ok
+test_workspace_redaction (test_submission_tools.SubmissionTests.test_workspace_redaction) ... ok
+
+----------------------------------------------------------------------
+Ran 99 tests in 0.829s
+
+OK

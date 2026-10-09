@@ -1,0 +1,20 @@
+name: Python unit and packaging tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m unittest -v test_lab test_recovery test_mining_permissions test_submission_tools
+      - run: python tools/check_repository.py
+# No MultiChain node runs in this workflow. A green job is NOT a live integration result.

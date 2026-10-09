@@ -1,0 +1,29 @@
+digraph Lab {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.32", ranksep="0.55", fontname="Arial", fontsize=15];
+  node [shape=box, style="rounded", fontname="Arial", fontsize=12, margin="0.16,0.12", color="#444444"];
+  edge [fontname="Arial", fontsize=10, color="#555555", arrowsize=0.7];
+  title [shape=plaintext, label="PROPOSED MULTICHAIN CLASSROOM ARCHITECTURE\nFive independent wallets / processes, one shared chain"];
+  authority [label="AUTHORITY NODE\nEnroll + grant / revoke\nFinalize two-validator decisions\nAuthorized miner 1"];
+  publisher [label="PUBLISHER NODE\nSign and submit candidate news\nSHA-256 content fingerprint\nNo final-decision permission"];
+  v1 [label="VALIDATOR 1 NODE\nNLP / tabular-Q recommendation\nSigned review vote\nAuthorized miner 2"];
+  v2 [label="VALIDATOR 2 NODE\nSeparate wallet + signed vote\nReview REAL / FAKE / REVIEW\nAuthorized miner 3"];
+  policy [label="PYTHON APPLICATION POLICY\nTwo distinct registered validators\nConfirmed, hash-bound matching votes\nOtherwise REVIEW (not public approval)", penwidth=1.7];
+  chain [label="SHARED MULTICHAIN LEDGER\nregistry | news | predictions | votes\ndecisions | audit | benchmarks\nNative signatures + write permissions\nPermissioned mining; diversity = 0.6", penwidth=1.7];
+  auditor [label="AUDITOR NODE\nRead replicated records\nRecompute content hashes + review outcome\nObserve confirmations and benchmark counts"];
+  assets [label="NewsCredit ASSET\n1,000 demonstration units\nExplicit reward transfer\nNot reputation; not mining currency"];
+  note [shape=plaintext, label="TRUST BOUNDARY\nMiners order / validate transactions; Python applies review policy.\nNo claim of Fabric chaincode equivalence or real-world truth.\nCommunity write restrictions do not make on-chain content private.", fontsize=11];
+  title -> authority [style=invis];
+  {rank=same;authority;publisher}
+  authority -> publisher [label="identity approval\n+ stream permission"];
+  publisher -> v1 [label="confirmed candidate"];
+  publisher -> v2 [label="same candidate"];
+  {rank=same;v1;v2}
+  v1 -> policy [label="vote 1"];
+  v2 -> policy [label="vote 2"];
+  policy -> chain [label="authority publishes result"];
+  authority -> chain [label="membership / audit",style=dashed];
+  chain -> auditor [label="replication + query"];
+  chain -> assets [dir=both,label="issue / transfer"];
+  {rank=same;auditor;assets}
+  auditor -> note [style=invis]; assets -> note [style=invis];
+}

@@ -1,0 +1,33 @@
+id,split,label,text
+train-01,train,REAL,The LabTown library opens at nine in the morning according to the published schedule.
+train-02,train,REAL,The LabTown council approved repairs to the north bridge in its meeting minutes.
+train-03,train,REAL,The LabTown school science exhibition is scheduled for Friday in the school notice.
+train-04,train,REAL,The LabTown bus route seven stops at the central station as listed in the timetable.
+train-05,train,REAL,The LabTown museum tickets cost ten credits according to the official price list.
+train-06,train,REAL,The LabTown sports final ended with a score of two to one in the match record.
+train-07,train,REAL,The LabTown weather station recorded five millimeters of rain in the daily report.
+train-08,train,REAL,The LabTown park closes at sunset according to the park notice.
+train-09,train,REAL,The LabTown university published the examination schedule on its notice board.
+train-10,train,REAL,The LabTown water office announced a maintenance shutdown for Tuesday.
+train-11,train,REAL,The LabTown market inspection report lists twelve registered stalls.
+train-12,train,REAL,The LabTown council report confirms the recycling center opens on Monday.
+train-13,train,FAKE,Shocking secret says the LabTown library opens at midnight without any source or evidence.
+train-14,train,FAKE,Unverified viral rumor claims the north bridge vanished and officials hid every record.
+train-15,train,FAKE,Anonymous unbelievable claim says the school cancelled all classes forever without evidence.
+train-16,train,FAKE,An unverified message claims every LabTown bus now flies with invisible wings.
+train-17,train,FAKE,Shocking anonymous rumor says all museum tickets cost a million credits without proof.
+train-18,train,FAKE,Viral secret claims the sports final score was one hundred to zero without a match record.
+train-19,train,FAKE,An anonymous post claims the weather station recorded a rainstorm made of gold.
+train-20,train,FAKE,Unverified unbelievable rumor says the park trees move into houses at midnight.
+train-21,train,FAKE,Anonymous secret post claims university examinations are permanently cancelled without notice.
+train-22,train,FAKE,Viral rumor claims the water office replaced the water supply with invisible liquid gold.
+train-23,train,FAKE,Shocking unverified message says the market has a million stalls without inspection evidence.
+train-24,train,FAKE,Anonymous unbelievable rumor claims the recycling center turns paper into diamonds instantly.
+test-01,test,REAL,The published LabTown timetable confirms that bus seven serves the central station.
+test-02,test,REAL,The school notice lists the science exhibition on Friday.
+test-03,test,REAL,The official museum price list shows a ticket price of ten credits.
+test-04,test,REAL,The Tuesday water maintenance shutdown appears in the office announcement.
+test-05,test,FAKE,Anonymous viral message says the north bridge disappeared without any evidence.
+test-06,test,FAKE,A shocking unverified post claims the school has cancelled classes forever.
+test-07,test,FAKE,Secret rumor says bus seven uses invisible wings to fly above the city.
+test-08,test,FAKE,An unbelievable anonymous report claims the recycling center makes diamonds from paper.

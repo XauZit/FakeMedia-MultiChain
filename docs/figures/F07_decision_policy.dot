@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="APPLICATION DECISION POLICY (NOT MINER CONSENSUS)";labelloc=t;
+a[label="Article confirmed; no prior finalization\nReviewers enrolled and authorized"];
+b[shape=diamond,label="Preconditions\nsatisfied?"];
+stop[label="Error: no decision written"];
+c[label="Check signed vote records\nIdentities, ID, hash, confirmation"];
+d[shape=diamond,label="Exactly two distinct\nvalid reviewers; no\ninvalid/duplicate votes?"];
+review[label="REVIEW"];
+e[shape=diamond,label="Same non-REVIEW\nlabel and exact\nnews transaction?"];
+verdict[label="REAL or FAKE\nAccording to matching reviewer votes"];
+f[label="Publish result + evidence txids\nAuditor rechecks references"];
+a->b;b->stop[label="No"];b->c[label="Yes"];c->d;d->review[label="No"];d->e[label="Yes"];
+e->review[label="No"];e->verdict[label="Yes"];review->f;verdict->f;
+
+}

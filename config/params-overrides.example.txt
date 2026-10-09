@@ -1,0 +1,18 @@
+# Documentation of defaults requested by lab.py setup; NOT a complete params.dat.
+# The authoritative runtime parameters come from getblockchainparams on your node.
+# Apply these at chain creation, before first start; never overwrite live params.dat.
+target-block-time = 2
+maximum-block-size = 8388608
+mining-diversity = 0.6
+mining-turnover = 0
+mine-empty-rounds = -1
+setup-first-blocks = 10
+target-adjust-freq = -1
+root-stream-open = false
+anyone-can-connect = false
+anyone-can-send = false
+anyone-can-receive = false
+anyone-can-create = false
+anyone-can-issue = false
+anyone-can-mine = false
+anyone-can-admin = false

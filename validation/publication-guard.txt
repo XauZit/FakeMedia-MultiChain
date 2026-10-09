@@ -1,0 +1,7 @@
+{
+  "checked_files": 71,
+  "mode": "staged Git blobs",
+  "passed": true,
+  "issues": [],
+  "limit": "Not a guarantee. Manually review all screenshots, PDFs, content and staged files."
+}

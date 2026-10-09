@@ -1,0 +1,31 @@
+{
+  "packaged_at_utc": "2026-10-09T12:22:09.208602+00:00",
+  "lab_version": "2.0.2-mining-check",
+  "core_byte_identical": true,
+  "lab_sha256": "c971785b2bb81f70d457fe2b4086efff469984b8b9b0d2093bf13260a33b6926",
+  "paper_byte_identical": true,
+  "paper_sha256": "99279a6b216406493345c66473a27ee2b67fa26e9b9165875edee2eb08cbe3dd",
+  "python_unit_tests": {
+    "count": 99,
+    "passed": true,
+    "scope": "88 preserved core/regression tests plus 11 packaging-helper tests; no live MultiChain",
+    "python": "3.13.5",
+    "platform": "Linux"
+  },
+  "pdf_pages": {
+    "technical_reference": 19,
+    "report_workbook": 16
+  },
+  "visual_review": "All pages of both generated documents reviewed; no detected clipping/overlap. Source paper preserved unchanged.",
+  "publication_guard": {
+    "staged_blob_check_passed": true,
+    "limits": "Heuristic; not a complete secret scanner. Manually review new screenshots, text and PDFs."
+  },
+  "live_evidence_status": "Supplied Windows readiness and CLI log only. Demo/security/load outcomes not independently established here.",
+  "pending": [
+    "Student-authored final report under instructor AI-use rule",
+    "Real screenshots",
+    "Live demo/security/benchmark evidence",
+    "Actual published repository URL and examiner access"
+  ]
+}

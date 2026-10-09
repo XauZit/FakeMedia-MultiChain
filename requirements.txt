@@ -1,0 +1,3 @@
+# Runtime and tests use the Python standard library only (Python >= 3.10).
+# Install MultiChain Community 2.3.3 separately; it is NOT a pip dependency.
+# No third-party Python packages are required for lab.py or tools/.

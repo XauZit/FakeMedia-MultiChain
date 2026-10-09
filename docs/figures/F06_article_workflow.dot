@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="ARTICLE, PREDICTION, VOTES AND DECISION";labelloc=t;
+a[label="Publisher: registered and news.write enabled\nChoose unique news_id; hash exact UTF-8 text"];
+b[label="publishfrom -> news\nRecord text + content_sha256 + publisher\nWait for reviewer-visible confirmation"];
+c[label="Validator 1: analyze text off-chain\nTokenize / TF-IDF / tabular-Q recommendation\npublishfrom -> predictions"];
+{rank=same;v1[label="Validator 1: check article\nRecord review -> votes"];v2[label="Validator 2: check same article\nRecord review -> votes"]}
+d[label="Wait until authority sees confirmed votes\nCheck memberships and current writer rights"];
+e[label="Python finalize() policy\nValidate identities, hashes, tx references\nREAL / FAKE only on two matching votes"];
+f[label="Authority: publishfrom -> decisions\nOther cases -> REVIEW or explicit error"];
+g[label="Auditor: inspect confirmed records\nRecompute referenced votes and hash\nReport audit_pass and bounded scope"];
+a->b->c;c->v1;c->v2;v1->d;v2->d;d->e->f->g;
+note[shape=note,label="Every stream publication is its own signed transaction.\nPipeline fixture reviewers use supplied classroom labels.\nThe final decision is not proof that an article is true."];
+g->note[style=invis];
+
+}

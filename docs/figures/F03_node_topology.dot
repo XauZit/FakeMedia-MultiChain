@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="LOCAL DEPLOYMENT AND PORTS\nFive processes and wallets; one host";labelloc=t;
+operator[label="Python lab.py / operator\nReads saved workspace/lab.json\nLoopback JSON-RPC (separate credentials)"];
+{rank=same;authority[label="AUTHORITY\nRPC 8441 | P2P 7441\nAdmin + miner + finalizer"];pub[label="PUBLISHER\nRPC 8442 | P2P 7442\nnews / benchmarks writer"]}
+{rank=same;v1[label="VALIDATOR 1\nRPC 8443 | P2P 7443\nPredictor + reviewer + miner"];v2[label="VALIDATOR 2\nRPC 8444 | P2P 7444\nReviewer + miner"]}
+aud[label="AUDITOR\nRPC 8445 | P2P 7445\nRead and recompute; no mine"];
+operator->authority[label="RPC"];
+operator->pub[label="RPC"];
+operator->v1[style=dashed];operator->v2[style=dashed];operator->aud[style=dashed];
+authority->pub[dir=both,label="P2P"];
+authority->v1[dir=both];pub->v2[dir=both];v1->aud[dir=both];v2->aud[dir=both];
+foot[shape=note,label="P2P edges are illustrative, not a claim of a fixed topology.\nEach node stores its own copy of the chain.\nDefaults shown; use saved ports if --auto-ports selected alternatives."];
+aud->foot[style=invis];
+
+}

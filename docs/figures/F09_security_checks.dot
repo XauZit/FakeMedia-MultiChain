@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="SECURITY TEST EXECUTION AND RESTORATION";labelloc=t;
+a[label="Check signed challenge acceptance\nReject replay, role substitution, expiry, wrong key"];
+b[label="Publisher tries decisions.write\nExpected outcome: permission denial"];
+c[label="Record original publisher permission\nRevoke news.write; wait for propagation"];
+d[label="Publisher tries writing news\nExpected outcome: permission denial"];
+e[label="FINALLY restore news.write\nWait for confirmation even if test fails"];
+f[label="Submit original text; read auditor hash\nCompare original vs modified copy\nCheck duplicate-ID policy and single-vote policy"];
+g[label="Save each actual check result\nOverall pass only if all checks pass\nPublish audit record and wait"];
+a->b->c->d->e->f->g;
+note[shape=note,label="Some checks exercise Python policy; others exercise native permissions.\nLabel their scope separately. No security result is assumed in advance."];
+g->note[style=invis];
+
+}

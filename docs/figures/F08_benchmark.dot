@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="BURST LOAD AND CONFIRMATION MEASUREMENT";labelloc=t;
+a[label="Preflight: five ready nodes, permissions,\nshared chain, beyond setup phase"];
+b[label="Choose mode, N, workers, payload, confirmations\nledger: 1 tx/request | pipeline: 5 tx/request\nPipeline requires --fixture-votes"];
+c[label="Prepare N logical requests\nStart timer t0; release shared worker gate"];
+d[label="At most workers requests execute concurrently\nRecord queue, service and burst-response times"];
+e[label="Classify each outcome\nsuccess / explicit failure / unknown write\nNever automatically replay an uncertain write"];
+f[label="All submissions finish: submission_seconds\nBegin bounded auditor confirmation polling"];
+g[label="Scan this run's blocks at required depth\nRescan on tip change; count known txids\nRecord complete requests, failures and unknowns"];
+h[label="End observation timer\nSave JSON + CSV + JSONL evidence\nPost-timer summary anchor excluded from workload"];
+a->b->c->d->e->f->g->h;
+note[shape=note,label="Confirmation observation includes polling overhead.\nIt is a batch upper-bound observation, not per-tx inclusion latency.\nOne-host measurements do not establish distributed scalability."];
+h->note[style=invis];
+
+}

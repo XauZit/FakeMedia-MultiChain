@@ -1,0 +1,133 @@
+{
+  "software_version": "2.0.2-mining-check",
+  "captured_at": "2026-10-08T19:41:12.916+00:00",
+  "workspace": "<EXISTING_WORKSPACE>",
+  "chain": "fakenews",
+  "setup_complete": true,
+  "all_passed": true,
+  "nodes": {
+    "authority": {
+      "rpc_port": 8441,
+      "p2p_port": 7441,
+      "online": true,
+      "blocks": 552,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1E1cjSGLFYNNRGVNDvf2XruR6GCKoxkJ9oYVzs",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 1,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": 552,
+        "chainstate": "waiting-mining-diversity",
+        "localstate": "waiting-mining-diversity",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "publisher": {
+      "rpc_port": 8442,
+      "p2p_port": 7442,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1DQYFSMhvpYksZue5pty2VGDBtPJCPHxzcfiqQ",
+        "permitted": false,
+        "present": false,
+        "source": "listminers.permitted",
+        "expected_permitted": false
+      },
+      "permission_mismatches": []
+    },
+    "validator1": {
+      "rpc_port": 8443,
+      "p2p_port": 7443,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1Ti1RNcWHHoKd8EqGNdxkXpeTQ4zcRsqPdNpWQ",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 1,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": 553,
+        "chainstate": "waiting-mining-diversity",
+        "localstate": "waiting-mining-diversity",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "validator2": {
+      "rpc_port": 8444,
+      "p2p_port": 7444,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "161yNo9jf5kNkfZy1sC8cnXLch5VTeRBcA6oHs",
+        "permitted": true,
+        "islocal": true,
+        "diversitywaitblocks": 0,
+        "startblock": 0,
+        "endblock": 4294967295,
+        "lastmined": null,
+        "chainstate": "mining-permitted",
+        "localstate": "waiting-mining-turnover",
+        "present": true,
+        "source": "listminers.permitted",
+        "expected_permitted": true
+      },
+      "permission_mismatches": []
+    },
+    "auditor": {
+      "rpc_port": 8445,
+      "p2p_port": 7445,
+      "online": true,
+      "blocks": 553,
+      "version": "2.3.3",
+      "missing_streams": [],
+      "unsubscribed_streams": [],
+      "open_streams": [],
+      "unsynchronized_streams": [],
+      "mining": {
+        "address": "1D3ej4m1Kn4hDcPPq815ZVMnNkyyki2vcDSRqn",
+        "permitted": false,
+        "present": false,
+        "source": "listminers.permitted",
+        "expected_permitted": false
+      },
+      "permission_mismatches": []
+    }
+  },
+  "shared_height_check": {
+    "height": 552,
+    "same_hash": true,
+    "height_lag": 1
+  },
+  "issues": [],
+  "note": "Readiness checks are not a performance result or a real-world truth guarantee."
+}

@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.20", nodesep="0.32", ranksep="0.22", fontname="DejaVu Sans", fontsize=15];
+node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=13, margin="0.12,0.07", color="#333333"];
+edge [fontname="DejaVu Sans", fontsize=10, color="#444444", arrowsize=0.7];
+
+label="SIGNED ENROLLMENT AND USER VALIDATION";labelloc=t;
+a[label="Operator approves a classroom role\nNode wallet owns its saved address"];
+b[label="Authority creates a challenge\ndomain + chain + genesis + role + address\n48-hex nonce + issue/expiry times (120 s)"];
+c[label="Role node: signmessage\nSign canonical JSON with its wallet key"];
+d[shape=diamond,label="Binding / time /\nnonce valid?"];
+e[shape=diamond,label="verifymessage\naccepts signature?"];
+x[label="Reject enrollment\nDo not grant application writer rights"];
+f[label="Record consumed nonce locally\nused_nonces.json stays private"];
+g[label="Authority publishes ENROLL to registry\nChallenge and signature recorded\nWait for confirmation"];
+h[label="Grant approved per-stream write rights\nApplication checks registered role"];
+a->b->c->d;d->x[label="No"];d->e[label="Yes"];e->x[label="No"];e->f[label="Yes"];f->g->h;
+note[shape=note,label="Proof of key possession is not real-world identity verification.\nNonce replay tracking is local state, not distributed chaincode."];
+h->note[style=invis];
+
+}
