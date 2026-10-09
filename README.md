@@ -143,9 +143,14 @@ The small `workspace-path.txt` file contains only the selected path. It is not a
 
 Your earlier successful run used the course-project workspace below. The NEW source folder can use that OLD private workspace without copying the wallets.
 
-Run this after Section 1 when that existing folder is still present:
+Run this after Section 1 when that existing folder is still present. Paste it directly into the same window, again without an outer `& { ... }` block:
 
 ```powershell
+# Stop early if Section 1 was skipped or wrapped in & { ... }.
+if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
+    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+}
+
 $Workspace = "C:\Users\BK-PC\Documents\Study Material\FAST - NUCES\Semester 3\Applications of Blockchain\Mid Term\FakeMedia_MultiChain_Exam_Kit\FakeMedia_Exam_Kit\workspace"
 $ConfigFile = Join-Path $Workspace "lab.json"
 
@@ -205,6 +210,11 @@ Do not treat the copied folder as a backup you can delete until you understand t
 **Prerequisite:** Section 1 initialized the session and Section 2B selected a deliberately new private workspace. Run this once, not every time you open PowerShell.
 
 ```powershell
+# Stop early if Section 1 was skipped or wrapped in & { ... }.
+if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
+    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+}
+
 if (Test-Path -LiteralPath (Join-Path $Workspace "lab.json")) {
     throw "This workspace is already configured. Use start or repair, not setup."
 }
@@ -287,6 +297,11 @@ Repair reuses the saved wallets and parameters. On a completed lab it does not a
 **Prerequisite:** Section 1, plus an existing selected workspace. This is your normal daily starting point after the first setup.
 
 ```powershell
+# Stop early if Section 1 was skipped or wrapped in & { ... }.
+if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
+    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+}
+
 if (-not (Test-Path -LiteralPath (Join-Path $Workspace "lab.json"))) {
     throw "No lab.json at the selected workspace. Recheck Section 2."
 }
@@ -1250,6 +1265,8 @@ If a site/alias serves this repository or a parent directory, remove that exposu
 | `Parameter set ... not complete` from a bare daemon command | Wrong/default data directory or incomplete standalone node | Select the saved workspace and run START; do not immediately create another chain |
 | `Couldn't connect to seed node 8441` | A port was supplied where a host was expected | Do not join another node to start this lab; seed format is `chain@host:P2P-port` |
 | `LiteralPath ... is null` | Session variables were not initialized | Rerun all of Section 1 in that window |
+| `Value cannot be null. Parameter name: encoding` from `WriteAllText` | `$Utf8NoBom`/`$WorkspaceChoiceFile` are empty, usually because Section 1 ran inside `& { ... }` and its variables disappeared when the block ended. The workspace choice was NOT saved, even if a success line printed afterwards | Rerun Section 1 directly (no outer `& { ... }`), then rerun Section 2A |
+| Python prints `unknown option --workspace` | `$LabFile` is empty, so Windows PowerShell dropped the empty argument and Python read `--workspace` as its own option; `lab.py` never ran | Rerun Section 1 directly (no outer `& { ... }`); check `$LabFile` is not empty before retrying |
 | CLI usage screen instead of data | Missing chain name or arguments, often from null configuration | Run all of Section 12A, not only its last line |
 | `No lab.json in workspace` | Wrong selection, no setup, or moved data | Check Section 2; do not infer that all original data is lost |
 | `Workspace already exists` | SETUP is being rerun | Use START, or REPAIR for incomplete setup |
