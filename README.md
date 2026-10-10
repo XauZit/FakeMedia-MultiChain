@@ -79,7 +79,7 @@ This README is the operating guide for the supplied FakeMedia GitHub submission 
 <a id="session"></a>
 ## 1. Initialize a PowerShell session
 
-**Do this every time you open a new PowerShell window.** Paste this entire block directly into the window, without adding an outer `& { ... }` block. Later sections need these variables to remain available in the same session. PowerShell session/scope rules are described in [R2](#references).
+**Do this every time you open a new PowerShell window.** Paste this entire block directly into the window, without adding an outer `& { ... }` block. Later sections need these variables to remain available in the same session. If you prefer to paste a block as one unit, wrap it in `. { ... }` (a dot, not `&`): the dot runs it in the current session and keeps its variables, while `&` discards them when the block ends. PowerShell session/scope rules are described in [R2](#references).
 
 This block checks paths and reads a previously selected workspace path, when one has been saved. It does not create a blockchain, start a node, or grant permission.
 
@@ -143,12 +143,12 @@ The small `workspace-path.txt` file contains only the selected path. It is not a
 
 Your earlier successful run used the course-project workspace below. The NEW source folder can use that OLD private workspace without copying the wallets.
 
-Run this after Section 1 when that existing folder is still present. Paste it directly into the same window, again without an outer `& { ... }` block:
+Run this after Section 1 when that existing folder is still present. Paste it directly into the same window (or inside `. { ... }`), again without an outer `& { ... }` block:
 
 ```powershell
 # Stop early if Section 1 was skipped or wrapped in & { ... }.
 if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
-    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+    throw "Section 1 variables are missing. Rerun Section 1 in this window, pasted directly or inside . { ... } (dot), not & { ... }."
 }
 
 $Workspace = "C:\Users\BK-PC\Documents\Study Material\FAST - NUCES\Semester 3\Applications of Blockchain\Mid Term\FakeMedia_MultiChain_Exam_Kit\FakeMedia_Exam_Kit\workspace"
@@ -212,7 +212,7 @@ Do not treat the copied folder as a backup you can delete until you understand t
 ```powershell
 # Stop early if Section 1 was skipped or wrapped in & { ... }.
 if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
-    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+    throw "Section 1 variables are missing. Rerun Section 1 in this window, pasted directly or inside . { ... } (dot), not & { ... }."
 }
 
 if (Test-Path -LiteralPath (Join-Path $Workspace "lab.json")) {
@@ -299,7 +299,7 @@ Repair reuses the saved wallets and parameters. On a completed lab it does not a
 ```powershell
 # Stop early if Section 1 was skipped or wrapped in & { ... }.
 if (-not $LabFile -or -not $WorkspaceChoiceFile -or -not $Utf8NoBom) {
-    throw "Section 1 variables are missing. Rerun Section 1 in this window without an outer & { ... } block."
+    throw "Section 1 variables are missing. Rerun Section 1 in this window, pasted directly or inside . { ... } (dot), not & { ... }."
 }
 
 if (-not (Test-Path -LiteralPath (Join-Path $Workspace "lab.json"))) {
@@ -1265,8 +1265,9 @@ If a site/alias serves this repository or a parent directory, remove that exposu
 | `Parameter set ... not complete` from a bare daemon command | Wrong/default data directory or incomplete standalone node | Select the saved workspace and run START; do not immediately create another chain |
 | `Couldn't connect to seed node 8441` | A port was supplied where a host was expected | Do not join another node to start this lab; seed format is `chain@host:P2P-port` |
 | `LiteralPath ... is null` | Session variables were not initialized | Rerun all of Section 1 in that window |
-| `Value cannot be null. Parameter name: encoding` from `WriteAllText` | `$Utf8NoBom`/`$WorkspaceChoiceFile` are empty, usually because Section 1 ran inside `& { ... }` and its variables disappeared when the block ended. The workspace choice was NOT saved, even if a success line printed afterwards | Rerun Section 1 directly (no outer `& { ... }`), then rerun Section 2A |
-| Python prints `unknown option --workspace` | `$LabFile` is empty, so Windows PowerShell dropped the empty argument and Python read `--workspace` as its own option; `lab.py` never ran | Rerun Section 1 directly (no outer `& { ... }`); check `$LabFile` is not empty before retrying |
+| `Section 1 variables are missing` | Section 1 was skipped, run in another window, or wrapped in `& { ... }` | Rerun Section 1 directly or inside `. { ... }`; wrap later sections the same way or not at all |
+| `Value cannot be null. Parameter name: encoding` from `WriteAllText` | `$Utf8NoBom`/`$WorkspaceChoiceFile` are empty, usually because Section 1 ran inside `& { ... }` and its variables disappeared when the block ended. The workspace choice was NOT saved, even if a success line printed afterwards | Rerun Section 1 directly or inside `. { ... }` (not `& { ... }`), then rerun Section 2A |
+| Python prints `unknown option --workspace` | `$LabFile` is empty, so Windows PowerShell dropped the empty argument and Python read `--workspace` as its own option; `lab.py` never ran | Rerun Section 1 directly or inside `. { ... }` (not `& { ... }`); check `$LabFile` is not empty before retrying |
 | CLI usage screen instead of data | Missing chain name or arguments, often from null configuration | Run all of Section 12A, not only its last line |
 | `No lab.json in workspace` | Wrong selection, no setup, or moved data | Check Section 2; do not infer that all original data is lost |
 | `Workspace already exists` | SETUP is being rerun | Use START, or REPAIR for incomplete setup |
