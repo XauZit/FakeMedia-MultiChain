@@ -1,6 +1,6 @@
 # FakeMedia-MultiChain: Windows PowerShell from setup to shutdown
 
-**Application:** `2.0.2-mining-check` | **MultiChain:** Community 2.3.3 | **Python:** 3.10+
+**Application:** `2.0.3-permission-check` | **MultiChain:** Community 2.3.3 | **Python:** 3.10+
 
 This README is the operating guide for the supplied FakeMedia GitHub submission package. It starts with the exact setup, start, test, and stop commands, then explains the application, security tests, load tests, evidence, and GitHub submission.
 
@@ -132,7 +132,7 @@ python "$LabFile" --version
 if ($LASTEXITCODE -ne 0) { throw "lab.py did not run. Check Python and the source files." }
 ```
 
-The application should print `2.0.2-mining-check`. A different version needs comparison with its own `--help`; this guide does not assume that unknown revisions have identical options.
+The application should print `2.0.3-permission-check`. A different version needs comparison with its own `--help`; this guide does not assume that unknown revisions have identical options.
 
 The small `workspace-path.txt` file contains only the selected path. It is not a wallet or replacement for `lab.json`. Sections 2A and 3 save it so that future sessions can find the same chain.
 
@@ -445,7 +445,7 @@ python -m unittest -v test_lab test_recovery test_mining_permissions test_submis
 if ($LASTEXITCODE -ne 0) { throw "Unit tests failed. Read the failed test before continuing." }
 ```
 
-The supplied submission package contains 99 tests across those four modules. A result ending in `OK` shows that those local tests passed; it does not prove that your live MultiChain deployment works.
+Version 2.0.3 runs 100 tests across those four modules (the supplied package had 99; 2.0.3 adds one security-check regression test). A result ending in `OK` shows that those local tests passed; it does not prove that your live MultiChain deployment works.
 
 ### 7B. Automatic end-to-end classroom demo: writes to the chain
 
@@ -1276,7 +1276,8 @@ If a site/alias serves this repository or a parent directory, remove that exposu
 | Transport connection refused | Node offline or wrong endpoint/configuration | START, then DOCTOR; not a successful negative security test |
 | Missing registry/news/benchmarks | Incomplete setup or wrong chain | DOCTOR, then REPAIR if setup is incomplete |
 | Miner `waiting-mining-diversity` | Authorization and immediate mining eligibility are different | Check `listminers.permitted`; keep the intended diversity setting |
-| `permission mismatch: mine` with old code | Earlier checker confused eligibility with authorization | Verify application version is `2.0.2-mining-check`, then inspect actual miner permissions |
+| `permission mismatch: mine` with old code | Earlier checker confused eligibility with authorization | Verify application version is `2.0.2-mining-check` or later, then inspect actual miner permissions |
+| `security-tests` shows `publisher_cannot_finalize` or `revoked_write_rejected` FAILED with `RPC code -704` | Version 2.0.2 or earlier: the node did refuse the write (-704 is MultiChain's insufficient-permissions code), but the check only looked for the word "permission" | Update to `2.0.3-permission-check`, confirm `--version`, rerun DOCTOR and `security-tests`; keep the earlier result as a recorded false negative |
 | Stream permission denied after an experiment | Writer may still be revoked | Restore that role explicitly, then DOCTOR |
 | `Run: python lab.py train` | Model missing in the selected workspace | TRAIN with the included dataset; verify workspace selection |
 | Duplicate article ID / validator already voted | Reusing an existing logical record | Read the existing record; use a fresh ID for a new experiment |
@@ -1352,7 +1353,7 @@ The paper's conclusion points toward further work on Proof of Authority and user
 
 ### Source basis and testing limits
 
-Application commands, defaults, behaviors, file locations, and limitations in this README were checked against `lab.py` version `2.0.2-mining-check`, its tests, and the three `tools` scripts in the supplied GitHub submission ZIP. External PowerShell/MultiChain/IIS/Git operating guidance is identified below. These sources are separate: a vendor API capability is not automatically an implemented feature in `lab.py`.
+Application commands, defaults, behaviors, file locations, and limitations in this README were checked against `lab.py` version `2.0.2-mining-check` (2.0.3 changes only how `security-tests` recognizes a permission denial), its tests, and the three `tools` scripts in the supplied GitHub submission ZIP. External PowerShell/MultiChain/IIS/Git operating guidance is identified below. These sources are separate: a vendor API capability is not automatically an implemented feature in `lab.py`.
 
 The previously supplied Windows transcript supports a successful readiness/CLI run of an earlier selected workspace. It does not establish results at the new source path or the outcome of a future benchmark. Validate the new run on your own Windows machine and retain genuine evidence. No benchmark times, screenshot results, or marks are guaranteed by this README.
 

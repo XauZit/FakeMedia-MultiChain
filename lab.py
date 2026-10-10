@@ -36,7 +36,7 @@ import uuid
 from pathlib import Path
 from typing import Any
 
-VERSION = '2.0.2-mining-check'
+VERSION = '2.0.3-permission-check'
 HERE = Path(__file__).resolve().parent
 ROLES = ('authority', 'publisher', 'validator1', 'validator2', 'auditor')
 VALIDATORS = ('validator1', 'validator2')
@@ -88,6 +88,21 @@ class RPCError(LabError):
         self.code = code
         self.ambiguous = ambiguous
         self.transport = transport
+
+
+RPC_INSUFFICIENT_PERMISSIONS = -704  # MultiChain src/rpc/rpcprotocol.h
+
+
+def permission_denied(exc: RPCError) -> bool:
+    """True only for a definite node-side permission rejection.
+
+    MultiChain 2.3.3 rejects an unauthorized stream write with code -704 and the
+    message 'Publishing in this stream is not allowed from this address', which
+    never says 'permission', so the code is the reliable signal.
+    """
+    if exc.ambiguous or exc.transport or exc.code is None:
+        return False
+    return exc.code == RPC_INSUFFICIENT_PERMISSIONS or 'permission' in str(exc).lower()
 
 
 def read_only_rpc(method: str) -> bool:
@@ -1262,7 +1277,7 @@ def security_tests(lab: Lab) -> dict:
         lab.publish('publisher', 'decisions', 'unauthorized-' + uuid.uuid4().hex, {'label': 'REAL'})
         record('publisher_cannot_finalize', False, 'Unexpected write; inspect permissions')
     except RPCError as exc:
-        record('publisher_cannot_finalize', not exc.ambiguous and exc.code is not None and 'permission' in str(exc).lower(), str(exc))
+        record('publisher_cannot_finalize', permission_denied(exc), str(exc))
     permission = lab.rpc('authority', 'verifypermission', lab.address('publisher'), 'news.write')
     if not permission:
         raise LabError('Publisher is already revoked. Restore explicitly before running security-tests')
@@ -1274,7 +1289,7 @@ def security_tests(lab: Lab) -> dict:
             lab.publish('publisher', 'news', 'revoked-' + uuid.uuid4().hex, {'text': 'should fail'})
             record('revoked_write_rejected', False, 'Unexpected write')
         except RPCError as exc:
-            record('revoked_write_rejected', not exc.ambiguous and exc.code is not None and 'permission' in str(exc).lower(), str(exc))
+            record('revoked_write_rejected', permission_denied(exc), str(exc))
     finally:
         permission_change(lab, 'publisher', True)
     original = 'Classroom article version one.'
@@ -1297,7 +1312,8 @@ def security_tests(lab: Lab) -> dict:
                                  'content_sha256': 'hash', 'label': 'REAL'}}}]
     record('single_validator_not_enough_local_policy',
            resolve_decision(single, validators, 'fixture', 'hash')['label'] == 'REVIEW', 'Policy-unit assertion, not chain consensus')
-    result = {'captured_at': utc(), 'all_passed': all(c['passed'] for c in checks), 'checks': checks}
+    result = {'software_version': VERSION, 'captured_at': utc(), 'all_passed': all(c['passed'] for c in checks),
+              'checks': checks}
     write_json(lab.root / 'evidence' / 'security_tests.json', result)
     txid = lab.publish('authority', 'audit', 'security-' + uuid.uuid4().hex, result)
     lab.wait([txid])

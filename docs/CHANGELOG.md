@@ -1,3 +1,18 @@
+# 2.0.3-permission-check
+
+Fixes a false negative in `security-tests`. MultiChain 2.3.3 rejects an
+unauthorized stream write with RPC code -704 (RPC_INSUFFICIENT_PERMISSIONS) and
+the message "Publishing in this stream is not allowed from this address". The
+`publisher_cannot_finalize` and `revoked_write_rejected` checks only searched the
+message for "permission", so they reported FAIL although the node had correctly
+refused both writes. They now accept code -704 (or "permission" wording) from a
+definite, non-ambiguous RPC error. Transport failures and other error codes still
+fail the checks. `security_tests.json` now records `software_version`. Adds one
+regression test (100 local tests).
+
+`PACKAGE_PROVENANCE.json` and `validation/RELEASE_CHECKS.json` still describe the
+2.0.2 package as originally built.
+
 # 2.0.2-mining-check
 
 Replaces the mining authorization check in setup/repair and doctor with
