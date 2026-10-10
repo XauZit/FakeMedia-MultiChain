@@ -23,7 +23,7 @@ https://docs.github.com/en/migrations/importing-source-code/using-the-command-li
 **[8] GitHub Docs, Building and testing Python.**
 https://docs.github.com/en/actions/tutorials/build-and-test-code/python
 
-**[C] Implementation source.** Preserved `lab.py` version 2.0.2-mining-check and `demo_news.csv`. Symbol/line index: `docs/CODE_INDEX.md`. This is the source for claims about this lab, not about the original paper.
+**[C] Implementation source.** `lab.py` version 2.0.3-permission-check (2.0.2-mining-check plus the security-test permission-code fix) and `demo_news.csv`. Symbol/line index: `docs/CODE_INDEX.md`. This is the source for claims about this lab, not about the original paper.
 
 **[E1] Supplied execution evidence.** User-supplied `Pasted text(3).txt`, captured timestamp reported as 2026-10-08T19:41:12.916+00:00. Selected path-redacted JSON in `evidence/provided-run/`; provenance records the original log hash. Not independently re-executed by the packager.
 

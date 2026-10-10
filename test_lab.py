@@ -142,6 +142,14 @@ class RPCTests(unittest.TestCase):
             rpc=self.client(Path(d)/'conf')
             with self.assertRaises(lab.RPCError) as ctx:rpc.call('fail')
             self.assertEqual(ctx.exception.code,-704);self.assertFalse(ctx.exception.ambiguous)
+    def test_permission_denied_recognizes_multichain_stream_rejection(self):
+        # Exact MultiChain 2.3.3 response to an unauthorized stream write.
+        stream=lab.RPCError('publishfrom: Publishing in this stream is not allowed from this address',-704)
+        self.assertTrue(lab.permission_denied(stream))
+        self.assertTrue(lab.permission_denied(lab.RPCError('permission denied',-1)))
+        self.assertFalse(lab.permission_denied(lab.RPCError('Invalid parameter',-8)))
+        self.assertFalse(lab.permission_denied(lab.RPCError('permission denied',-704,ambiguous=True)))
+        self.assertFalse(lab.permission_denied(lab.RPCError('connection refused: permission',None,transport=True)))
     def test_no_retry_on_error(self):
         with tempfile.TemporaryDirectory() as d:
             rpc=self.client(Path(d)/'conf');before=len(self.calls)
